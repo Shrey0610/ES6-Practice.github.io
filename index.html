@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/first.js" class="js">
+    <script src="/first.js"> </script>
+
+    <title>ES6</title>
+</head>
+<body>
+    <p id="para"></p>
+    <p id="para2"></p>
+    <button onclick="document.getElementById('para').innerHTML= 'Button clicked'">click me</button>
+
+
+    <script>
+        let consta= 'This is the first ES6 file'; 
+        document.getElementById("para").innerText= consta;
+
+        let a= 'This is'
+        let b= 'awesome'
+        let hello= `${a} ${b}`;
+        document.getElementById("para2").innerText= hello
+
+    </script>
+</body>
+</html>
