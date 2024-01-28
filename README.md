@@ -1,6 +1,6 @@
 # ES6-Practice.github.io
 ## What is ES6?
-  --It introduced several new features and enhancements to make JavaScript code more expressive, readable, and powerful.
+  It introduced several new features and enhancements to make JavaScript code more expressive, readable, and powerful.
 
 ## What are some of its features?
   1. Arrow Function
