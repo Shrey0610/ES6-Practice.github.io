@@ -1,3 +1,31 @@
+//Arrow Function-
+    //function declaration
+    function breakfastMenu() {
+        return "I'm going to scrambled eggs for breakfast";
+    }
+
+    //anonymous function
+    const lunchMenu = function() {
+        return "I'm going to eat pizza for lunch";
+    }
+
+
+    const dinnermenu= (food)=>  `I'm going to eat a ${food} for dinner` //we don't need to specify return
+
+
+    const dinnermenu2= food2=>  `I'm going also to eat a ${food2} for dinner` //don't need to add paranthesis if there is only one argument
+
+    const dinnermenu3= (...food)=>  `I'm going to eat a ${food} for dinner` //using both arrow and spread operator
+    
+
+    console.log(dinnermenu("pizza"));
+    console.log(dinnermenu2("pasta"));
+    console.log(dinnermenu3("pasta ", "pizza ", 'dosa'));
+
+
+
+
+
 //template literals-
 
 let x= 'A'
@@ -129,3 +157,81 @@ let employee={
 }
 
 console.log(employee);
+
+
+
+
+//challenge
+
+//Imagine you are going out to do some grocery shopping. So you have an array called shoppingList with all the products you want to buy. Now that you are inside of the shop, you have a basket with all the products from your list, but you want to add a few more. Create a new array called shoppingBasket, that will be a copy of the shoppingList array, and add some new products into it. 
+
+const shoppingList = ["eggs", "milk", "butter"];
+const newlist= [...shoppingList, "bread", "crossoint", "peanutbutter"]
+
+console.log(newlist)
+
+
+//Rest Operator- 
+function add(nums){
+    console.log(arguments) //Misc.- Will print out all the arguments in terms of an object
+    console.log(nums)
+}
+
+function add2(...nums){
+    console.log(nums)
+}
+
+add(4,5,6,7,8,9)
+add2(4,5,6,7,8,9) 
+
+
+
+//Default Params-
+const leadSinger = (artist = "Shrey") => {
+    console.log(`${artist} is the lead singer of Cold Play`);
+}
+
+leadSinger();
+
+
+// Default Params Challenge-
+//Create a function that receives a parameter of food.
+//If your parameter food is going to have a value of "milk" the function should print into the console the following: "I'm going to buy milk from the grocery shop"
+//But if you dont pass a value to your parameter food, it should print :"I'm going to buy something from the grocery shop"
+
+
+const grocery= (food= 'something')=>{
+
+    if (`${food}` != null){
+    console.log(`I'm going to buy ${food} from the grocery shop`)
+    }
+
+    else{
+        console.log(`I'm going to buy ${food} from the grocery shop`)
+    }
+}
+
+grocery()
+
+
+
+// includes()-
+
+let numArray= [1,2,3,4,5]
+console.log(numArray.indexOf(0)) //old method for finding inclusivity
+
+console.log(numArray.includes(0)) //here it returns a boolean value
+
+
+//includes() challenge-
+const listIngredients =  [ "flour", "sugar", "eggs", "butter" ];
+
+if(listIngredients.includes('chocolate')){
+    console.log('We are going to make a chocolate cake')
+}
+else{
+    console.log("We can't make a chocolate cake because we are missing the ingredient chocolate")
+}
+
+
+//let & const-
