@@ -66,13 +66,13 @@ console.log(lastName);
 
 
 //Object literals-
-function addressMaker(city, state) {
+function addressMakerr(city, state) {
     const newAdress = {city, state};
     
     console.log(newAdress);
 }
 
-addressMaker('Austin', 'Texas');
+addressMakerr('Austin', 'Texas');
 
 
 //all of the above-
@@ -234,4 +234,20 @@ else{
 }
 
 
-//let & const-
+//let & const- (does not use hoisting)
+const  example= 5;
+console.log(example)
+
+var example2= [];
+example2.append= 'a';
+console.log(example2);
+
+
+
+
+//padStart() & padEnd()-
+let namedd= 'Shrey';
+
+console.log(namedd.padStart(10,'p'));
+
+console.log(namedd.padEnd(10,'z'));
