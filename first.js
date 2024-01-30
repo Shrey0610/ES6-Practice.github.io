@@ -382,3 +382,50 @@ fetch('https://jsonplaceholder.typicode.com/comments', {
  })
  .then((response)=>response.json())
  .then((json)=> console.log(json))
+
+
+
+ // async and await- 
+ const photos= [];
+
+ async function photoupload(){
+    let uploadstatus= new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            photos.push('Profile Picture')
+            resolve('Picture uploaded')
+        }, 4000);
+    })
+    let result= await uploadstatus;
+
+    console.log(result);
+    console.log(photos.length);
+    console.log(`${photos}`);
+ }
+
+ photoupload();
+
+
+
+ //challenge- 
+ async function randomjoke(){
+    let getjoke= new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            fetch('https://api.chucknorris.io/jokes/random')
+            .then((request)=> request.json())
+            .then((json)=> resolve(`${json.value}`));
+        }, 5000);
+    })
+    let result2= await getjoke;
+    console.log(result2);
+
+ }
+
+ randomjoke();
+
+
+ //Sets in ES6- unique value for arrays 
+
+ const example3= new Set([1,1,1,1,3,2,4]);
+example3.add(6);
+console.log(example3.has(2));
+ console.log(example3);
