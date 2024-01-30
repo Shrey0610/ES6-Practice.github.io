@@ -268,5 +268,117 @@ add3(2);
 
 //Promises- used in network requests or APIs
 
+const buyFlightTickets=()=>{
+    return new Promise( (resolve, reject)=>{
+        setTimeout(()=>{
+            const error= false; //flag 
+
+            if(error){
+                reject("Sorry your payment wasn't successful")
+            }
+
+            else{
+                resolve("Thank you, your payment was successful")
+            }
+        }, 3000)
+    })
+}
+
+buyFlightTickets()
+.then( (sucess)=>{
+    console.log(sucess)
+})
+.catch((error)=>{
+    console.log(error);
+}); 
+//if everything goes good, then due ti resolve- the then function will be executed otherwise catch will.
 
 
+
+//challenge= promises-
+/**
+ * Promises - Challenge
+ * Create a promise that returns some user data and throws an error when not found.
+ * Log the user data when listening to the promise as well as log the error.
+ * 
+ * Docs - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+*/
+
+const users= {
+    Name: 'Harry',
+    Payment: 500000,
+    Appointment: true
+}
+
+const funcforpromise = ()=>{
+    return new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+            const error= false;
+
+            if(error){
+                reject('Sorry bro couldn\'t authenticate you')
+            }
+
+            else{
+                resolve(`${users.Name} Bhai`)
+            }
+
+        }, 4000)
+    })
+}
+
+funcforpromise()
+.then( (sucess)=>{
+    console.log(sucess)
+})
+.catch((error)=>{
+    console.log(error);
+}); 
+
+
+//Processing continues to the next link of the chain even when a .then() lacks a callback function. Therefore, a chain can safely omit every rejection callback function until the final .catch().Handling a rejected promise in each .then() has consequences further down the promise chain. Sometimes there is no choice, because an error must be handled immediately. In such cases we must throw an error of some type to maintain error state down the chain. On the other hand, in the absence of an immediate need, it is simpler to leave out error handling until a final .catch() statement. A .catch() is really just a .then() without a slot for a callback function for the case when the promise is fulfilled.
+
+
+
+//Fetch
+
+// -> GET
+fetch('https://jsonplaceholder.typicode.com/photos/1') //return promise
+.then((response)=> response.json()) //also returns a promise
+.then((json)=> console.log(`${json.url}`));
+
+
+// ->POST
+fetch('https://jsonplaceholder.typicode.com/comments', {
+    method: 'POST',
+    body:JSON.stringify({
+        postID: 1,
+        nname: 'ShreyShah',
+        email: 'shrey@gmail.com',
+        body: 'That\'s great dude! Keep it up.'
+    })
+})
+.then((response)=> response.json())
+.then((json)=> console.log(json));
+
+
+//challenge- fetch-
+
+// * GET the first comments value 'https://jsonplaceholder.typicode.com/comments/1' and log its value.
+ //* POST a new comment using 'https://jsonplaceholder.typicode.com/comments' and log its value.
+
+
+ fetch('https://jsonplaceholder.typicode.com/comments/1')
+ .then((response)=> response.json()).then((json)=> console.log(json));
+
+
+ fetch('https://jsonplaceholder.typicode.com/comments', {
+    method: 'POST',
+    body: JSON.stringify({
+        postID: 2,
+        id:2,
+        nnname: 'Awesome ShreyShah'
+    })
+ })
+ .then((response)=>response.json())
+ .then((json)=> console.log(json))
