@@ -251,3 +251,22 @@ let namedd= 'Shrey';
 console.log(namedd.padStart(10,'p'));
 
 console.log(namedd.padEnd(10,'z'));
+
+
+
+//Trailing comma-
+function add3(param1,){
+    const example = {
+        name: 'Dylan',
+    };
+    
+    console.log(example)
+};
+
+add3(2);
+
+
+//Promises- used in network requests or APIs
+
+
+
